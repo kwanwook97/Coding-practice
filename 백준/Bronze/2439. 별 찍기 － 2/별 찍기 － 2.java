@@ -13,14 +13,13 @@ public class Main {
 
         for(int i = 1; i <= N; i++){
             for(int j = 1; j <= N - i; j++){
-                bw.write(' ');
+                bw.write(" ");
             }
             for(int k = 0; k < i; k++) {
-                bw.write('*');
+                bw.write("*");
             }
             bw.newLine();
         }
-        br.close();
         bw.flush();
         bw.close();
     }
