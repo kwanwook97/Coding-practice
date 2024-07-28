@@ -32,7 +32,7 @@ public class Main{
         // 주어진 값들중 x보다 작은 값 출력하기.
         for(int i=0; i<arr.length; i++){
             if(arr[i] < x){     // x값보다 작다면, StringBuilder를 이용하여 문자열 변경.
-                sb.append(arr[i] + " ");
+                sb.append(arr[i]).append(' ');
             }       
         }
         
