@@ -18,9 +18,11 @@ public class Main{
         // 알파벳 - a = 알파벳의 순번.(0부터시작한다.)
         String s = br.readLine();
         int len = s.length();
+        
         for(int i=0; i<len; i++){
-            if(arr[s.charAt(i) - 'a'] == -1){
-                arr[s.charAt(i) - 'a'] = i;
+            char ch = s.charAt(i);
+            if(arr[ch - 'a'] == -1){
+                arr[ch - 'a'] = i;
             }    
         }
         
