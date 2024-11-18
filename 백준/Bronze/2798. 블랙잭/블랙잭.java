@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
+
 public class Main {
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
@@ -19,25 +21,24 @@ public class Main {
 		
 		boolean swapped; // 요소가 교환되었는지 확인하기 위한 변수
 		
-		// 오름차순 정렬 (버블소트 사용)
-		for(int i=0; i<cardCnt-1; i++) {
-			swapped = false;
-			
-			for(int j=0; j<cardCnt-1-i; j++) {
-				if(arr[j] > arr[j+1]) {
-					int temp = 0;
-					temp = arr[j];
-					arr[j] = arr[j+1];
-					arr[j+1] = temp;
-					swapped = true;
-				}
-			}
-			
-			if(!swapped) break; // 이미 정렬이 된 상태 라면 반복문 종료.
+		// 내림차순 정렬 (버블소트 사용)
+		for (int i = 0; i < cardCnt - 1; i++) {
+		    swapped = false;
+
+		    for (int j = 0; j < cardCnt - 1 - i; j++) {
+		        if (arr[j] < arr[j + 1]) { 
+		            int temp = arr[j];
+		            arr[j] = arr[j + 1];
+		            arr[j + 1] = temp;
+		            swapped = true;
+		        }
+		    }
+
+		    if (!swapped) break; // 이미 정렬된 상태라면 반복문 종료
 		}
 		
 		
-		int result = 0; // M에 가장 가까운 합
+		int result = 0; // Max값에 가장 가까운 합
 
         // 3장의 카드를 고르는 모든 조합 탐색
         for (int i = 0; i < cardCnt - 2; i++) {
@@ -45,7 +46,7 @@ public class Main {
                 for (int k = j + 1; k < cardCnt; k++) {
                     int sum = arr[i] + arr[j] + arr[k]; // 3장의 카드 합
 
-                    // M을 넘지 않으면서 최대값 갱신
+                    // Max값을 넘지 않으면서 최대값 갱신
                     if (sum <= maxNum && sum > result) {
                         result = sum;
                     }
@@ -57,4 +58,5 @@ public class Main {
 
         sc.close();
 	}
+
 }
